@@ -63,8 +63,8 @@ class Library {
 
     // feature-borrow-book
     public void borrowBook(String title) {
-        System.out.println("TODO");
-    }
+    System.out.println("Book checked out");
+}
 
     public void returnBook(String title) {
         System.out.println("TODO");
