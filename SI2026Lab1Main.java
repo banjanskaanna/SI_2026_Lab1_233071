@@ -51,74 +51,36 @@ class Library {
         books.add(book);
     }
 
+    // feature-search-books
     public boolean searchBookByTitle(String title) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
-                System.out.println("Book found: " + book);
                 return true;
             }
         }
-        System.out.println("Book not found.");
         return false;
     }
 
+    // feature-borrow-book
     public void borrowBook(String title) {
-        for (Book book : books) {
-            if (book.getTitle().equalsIgnoreCase(title)) {
-                if (!book.isBorrowed()) {
-                    book.setBorrowed(true);
-                    // ✅ FIXED LINE (after conflict)
-                    System.out.println("You borrowed: " + book.getTitle());
-                } else {
-                    System.out.println("Book is already borrowed.");
-                }
-                return;
-            }
-        }
-        System.out.println("Book not found.");
+        System.out.println("TODO");
     }
 
     public void returnBook(String title) {
-        for (Book book : books) {
-            if (book.getTitle().equalsIgnoreCase(title)) {
-                if (book.isBorrowed()) {
-                    book.setBorrowed(false);
-                    System.out.println("Book returned.");
-                } else {
-                    System.out.println("Book was not borrowed.");
-                }
-                return;
-            }
-        }
-        System.out.println("Book not found.");
+        System.out.println("TODO");
     }
 
+    // feature-genre-report
     public void printBooksByGenre(String genre) {
-        System.out.println("Books in genre: " + genre);
-
-        for (Book book : books) {
-            if (book.getGenre().equalsIgnoreCase(genre)) {
-                System.out.println(book);
-            }
-        }
+        System.out.println("TODO");
     }
 
     public int countAvailableBooks() {
-        int count = 0;
-        for (Book book : books) {
-            if (!book.isBorrowed()) {
-                count++;
-            }
-        }
-        return count;
+        return 0;
     }
 
     public void printBorrowedBooks() {
-        for (Book book : books) {
-            if (book.isBorrowed()) {
-                System.out.println(book);
-            }
-        }
+        System.out.println("TODO");
     }
 }
 
@@ -133,9 +95,7 @@ public class SI2026Lab1Main {
 
         System.out.println("Library initialized.");
 
-        // test
-	library.printBooksByGenre("Programming");
-        library.searchBookByTitle("Clean Code");
-        library.borrowBook("Clean Code");
+        // Test for feature-search-books
+        System.out.println(library.searchBookByTitle("Clean Code"));
     }
 }
