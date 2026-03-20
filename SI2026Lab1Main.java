@@ -63,8 +63,15 @@ class Library {
 
     // feature-borrow-book
     public void borrowBook(String title) {
-        System.out.println("TODO");
+    for (Book book : books) {
+        if (book.getTitle().equalsIgnoreCase(title) && !book.isBorrowed()) {
+            book.setBorrowed(true);
+            System.out.println("Borrowed successfully");
+            return;
+        }
     }
+    System.out.println("Book not available");
+}
 
     public void returnBook(String title) {
         System.out.println("TODO");
