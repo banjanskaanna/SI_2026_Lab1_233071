@@ -1,4 +1,5 @@
 Commands used:
+
 git checkout -b feature-search-books
 git commit -m "Implement book search"
 git push -u origin feature-search-books
@@ -24,3 +25,29 @@ System.out.println("You borrowed: " + book.getTitle());
 
 Merge strategy:
 Recursive (three-way merge)
+
+git log --oneline --graph --all:
+* c4a7ca8 Final commit
+*   cde8739 Merge branch 'feature-borrow-book'
+|\
+| *   f765a86 Merge branch 'master' into feature-borrow-book
+| |\
+| * | 10e3453 Implement borrow book
+* | | d485f0b Implement genre report
+| |/
+|/|
+* | 3c2f18f Update borrow message on master
+|/
+* c7d4320 Implement book search
+* 1ae268a Add starter code
+* de612eb Initial commit
+
+git status after merge of master into feature-borrow-book:
+On branch feature-borrow-book
+nothing to commit, working tree clean
+
+Merge feature-genre-report into master:
+Fast-forward, because feature-genre-report had no divergence from master at the time of merging.
+
+Merge feature-borrow-book into master:
+Recursive (three-way merge), because feature-borrow-book had its own commits and a conflict with master branch.
